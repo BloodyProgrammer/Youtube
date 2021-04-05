@@ -1,6 +1,11 @@
-# Youtube
-Hello! Siema!
+# XSS defend
 
-Choose file and see the code from my videos on youtube!
+eng
 
-Wybierz plik i zobacz kod z filmu na youtube!
+Defend before XSS attack!
+
+Code from video about XSS on my Youtube
+
+pl 
+
+Kod z filmu o ataku XSS
