@@ -1,9 +1,10 @@
 <?php
-
+	// connect
 	include('config/db_connect.php');
+// insert data
 	$imie = $_POST['imie'];//mysqli_real_escape_string($conn,
 	$nazwisko = $_POST['nazwisko'];//mysqli_real_escape_string($conn, 
-
+// queries
 	// $sql = "SELECT Email FROM uzytkownicy WHERE Imie = '".$imie."' AND Nazwisko = '".$nazwisko."'";
 	$prepared = mysqli_prepare($conn, "SELECT Email FROM uzytkownicy WHERE Imie = ? AND Nazwisko = ?");
 	mysqli_stmt_bind_param($prepared, "ss", $imie, $nazwisko);
@@ -15,7 +16,7 @@
 	// } else{
 	// 	echo 'query error'.mysqli_error($conn);
 	// }
-
+// executing query
 	// if(mysqli_stmt_execute($prepared)){ //mysqli_stmt_execute($prepared);
 	// 	echo "Done";	
 	// 	$wynik = mysqli_stmt_execute($prepared);
@@ -25,6 +26,7 @@
 	// } else{
 	// 	echo 'query error'.mysqli_error($conn);
 	// }
+
 	$uzytkownicy = array();
 	mysqli_stmt_execute($prepared);
 	$wynik = $prepared->get_result(); // mysqli_stmt_get_result($prepared)
